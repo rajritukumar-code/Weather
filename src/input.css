@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme{
+    --color-bl-color1: #212529;
+    --color-bg-color2:#2a2b2d;
+    --color-api-1:#d4e157;
+    --color-api-2:#ffee58;
+    --color-api-3:#ffca28;
+    --color-api-4:#ff7043;
+    --color-api-5:#ef5350;
+}
+
+@layer base {
+    body {
+        min-height: 100vh;
+        background-color: var(--color-bl-color1);
+        color: #fff;
+        font-family: sans-serif;
+        padding: 0 15px;
+    }
+}

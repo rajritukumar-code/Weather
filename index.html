@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forcast</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="header sticky top-0 bg-[#212529] flex justify-between items-center mb-[10px] py-[15px] px-0"
+      >
+        <h2>Weather</h2>
+        <div class="weather-input">
+          <input
+            class="bg-[#2a2b2d] p-[12px] text-[16px] rounded-[25px] text-[#fff] focus:outline-none"
+            type="text"
+            name="city"
+            id="city_input"
+            placeholder="Enter city name"
+          />
+          <button
+            class="text-[16px] p-[12px] rounded-[25px] bg-[#fff] text-black cursor-pointer"
+            type="button"
+            id="searchBtn"
+          >
+            <i class="bx bx-search-alt-2"></i>Search
+          </button>
+          <button
+            class="text-[16px] p-[12px] rounded-[25px] bg-[#ea6e4b] cursor-pointer"
+            type="button"
+            id="locationBtn"
+          >
+            <i class="bx bx-target-lock"></i>current Loaction
+          </button>
+        </div>
+      </div>
+      <div class="weather-data grid grid-cols-[repeat(4,1fr)] gap-[12px]">
+        <div class="weather-left col-span-1">
+          <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
+            <div class="current-weather flex justify-between items-center">
+              <div class="details">
+                <p class="text-[14px] text-[#fff]">Now</p>
+                <h2 class="text-[32px] font-medium my-[7px] mx-0">___&deg;C</h2>
+                <p class="text-[14px] text-[#999]">____</p>
+              </div>
+              <div class="weather-icon">
+                <img src="https://openweathermap.org/img/wn/02d.png" alt="" />
+              </div>
+            </div>
+            <hr />
+            <div class="card-footer text-[14px] mb-12px">
+              <p class="text-[14px] text-[#999]">
+                <i class="bx bx-calendar-alt"></i>___
+              </p>
+              <p class="text-[14px] text-[#999]">
+                <i class="bx bx-location-plus"></i>____
+              </p>
+            </div>
+          </div>
+          <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
+            <h2 class="text-[32px] font-medium my-[7px] mx-0">
+              5 days Forecast
+            </h2>
+            <div class="day-forecast">
+              <div
+                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+              >
+                <div class="icon-wrapper flex items-center">
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <span>___&deg;C</span>
+                </div>
+                <p>____</p>
+                <p>____</p>
+              </div>
+
+              <div
+                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+              >
+                <div class="icon-wrapper flex items-center">
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <span>___&deg;C</span>
+                </div>
+                <p>____</p>
+                <p>____</p>
+              </div>
+
+              <div
+                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+              >
+                <div class="icon-wrapper flex items-center">
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <span>___&deg;C</span>
+                </div>
+                <p>____</p>
+                <p>____</p>
+              </div>
+
+              <div
+                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+              >
+                <div class="icon-wrapper flex items-center">
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <span>___&deg;C</span>
+                </div>
+                <p>____</p>
+                <p>____</p>
+              </div>
+
+              <div
+                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+              >
+                <div class="icon-wrapper flex items-center">
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <span>___&deg;C</span>
+                </div>
+                <p>____</p>
+                <p>____</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="weather-right col-span-3">
+          <h2 class="mb-[10px]">Today's Highlights</h2>
+          <div class="hightlights grid grid-cols-[repeat(4,1fr)] gap-[15px]">
+            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
+              <div class="card-head flex justify-between mb-[10px]">
+                <p>Air Quality Index</p>
+                <p class="air-index api-1 text-[#000] py-[5px] px-[10px] rounded-[15px]">Good</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
