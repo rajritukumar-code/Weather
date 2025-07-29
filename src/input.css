@@ -8,6 +8,10 @@
     --color-api-3:#ffca28;
     --color-api-4:#ff7043;
     --color-api-5:#ef5350;
+
+    --breakpoint-xl: 1100px;
+    --breakpoint-md: 1040px;
+    /* --breakpoint-xs: 30rem; */
 }
 
 @layer base {
@@ -18,4 +22,26 @@
         font-family: sans-serif;
         padding: 0 15px;
     }
+    hr{
+        margin-bottom: 10px;
+    }
+}
+@layer components{
+    .api-1{
+        background-color: var(--color-api-1);
+    }
+    .api-2{
+        background-color: var(--color-api-2);
+    }
+    .api-3{
+        background-color: var(--color-api-3);
+    }
+    .api-4{
+        background-color: var(--color-api-4);
+    }
+    .api-5{
+        background-color: var(--color-api-5);
+    }
+   
+    
 }
