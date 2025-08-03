@@ -19,6 +19,8 @@ let aqiList = ["Good", "Fair", "Moderate", "Poor", "Very Poor"];
 
 // console.log(pressurVal,visibilityVal,windSpeedVal,locationbtn);
 
+
+// get Weather Details start
 function getWeatherDetails(name, lat, lon, country, state) {
   let FORECAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`;
 
@@ -49,11 +51,11 @@ function getWeatherDetails(name, lat, lon, country, state) {
       "Nov",
       "Dec",
     ]);
-
+// featch api for Air pollutions
   fetch(AIR_POLLUTION_API_URL)
     .then((res) => res.json())
     .then((data) => {
-      let { co, no, no2, o3, so2, pm2_5, pm10, nh3 } = data.list[0].components;
+      let { co, no, o3, so2, pm2_5, pm10, nh3 } = data.list[0].components;
       apiCard.innerHTML = `
          <div
                 class="card-head flex justify-between mb-[10px] "
@@ -102,13 +104,8 @@ function getWeatherDetails(name, lat, lon, country, state) {
                   <p class="text-center">O3</p>
                   <h2>${o3}</h2>
                 </div>
-
-                
-               
               </div>
-
         `;
-
       // console.log(data);
     })
     .catch(() => {
@@ -160,7 +157,7 @@ function getWeatherDetails(name, lat, lon, country, state) {
        sunriseCard.innerHTML=`
 
        <div class="card-head">
-                <p>Sunrise & Sunset</p>
+                <p class="mb-2.5">Sunrise & Sunset</p>
               </div>
               <div class="sunrise-sunset grid grid-cols-[repeat(2,1fr)]">
                 <div class="item flex items-center gap-2.5">
@@ -211,17 +208,15 @@ function getWeatherDetails(name, lat, lon, country, state) {
         if(hr>12) hr= hr-12;
         hourlyForcastCard.innerHTML +=`
         <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center "
             >
               <p>${hr} ${a}</p>
-              <img src="https://openweathermap.org/img/wn/${hourlyForcast[i].weather[0].icon}.png" alt="" />
+              <img  src="https://openweathermap.org/img/wn/${hourlyForcast[i].weather[0].icon}.png" alt="" />
               <p>${(hourlyForcast[i].main.temp - 273.15).toFixed(2)}&deg;C</p>
             </div>
         `
-
-
-        
       }
+
       let uniqueForcastDays = [];
       let fiveDaysForecast = data.list.filter((forecast) => {
         let forcastDate = new Date(forecast.dt_txt).getDate();
@@ -259,7 +254,9 @@ function getWeatherDetails(name, lat, lon, country, state) {
       alert("failed to fetch weather");
     });
 }
+// get Weather Details Ends
 
+// get city coordinates start
 function getCityCooordinates() {
   let cityName = cityInput.value.trim();
   cityInput.value = "";
@@ -280,7 +277,9 @@ function getCityCooordinates() {
       );
     });
 }
+// get city coordinates Ends
 
+// get user coordinates start
 function getUsercoodinates(){
   navigator.geolocation.getCurrentPosition(position=>{
     let {latitude, longitude}=position.coords;
@@ -300,9 +299,18 @@ function getUsercoodinates(){
     }
   });
 }
+// get user coordinates start
 
+
+// addEventLister on search buttons
 searchBtn.addEventListener("click", getCityCooordinates);
+
+// addEventLister on location buttons
 locationbtn.addEventListener('click',getUsercoodinates);
+
+// addEventLister on Input Box
 cityInput.addEventListener('keyup',e=>e.key==='Enter'&& getCityCooordinates());
+
+// addEventLister on defalut location of user
 window.addEventListener('load',getUsercoodinates);
 
