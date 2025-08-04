@@ -316,7 +316,7 @@ window.addEventListener('load',getUsercoodinates);
 
 
 const tempUnitSelector = document.querySelector("select");
-// const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
+ const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
 
 let currentUnit = "C"; // Default unit
 let temperatureInCelsius = 25; // You can replace this with actual fetched value
@@ -335,7 +335,7 @@ function updateTemperatureDisplay(temp, unit) {
   const mainTempElement = document.querySelectorAll(".icon-wrapper span");
   const locationTemp= document.querySelector(".current-weather h2 ");
   // const hourlyTemp=document.querySelectorAll(".hourly-forecast .card h2");
-  console.log(hourlyTemp);
+  console.log(mainTempElement);
 
   if (!mainTempElement) return;
 
