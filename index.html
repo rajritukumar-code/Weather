@@ -18,463 +18,492 @@
   </head>
   <body>
     <main>
-    <div class="container">
-      <!-- city Inputs Section start -->
-      <section>
-      <div
-        class="header sticky top-0 bg-[#212529] flex justify-between items-center mb-[10px] py-[15px] px-0"
-      >
-        <h2 class="text-2xl font-bold">Weather</h2>
-        <div class="weather-input">
-          <input
-            class="bg-[#2a2b2d] p-[12px] text-[16px] rounded-[25px] text-[#fff] focus:outline-none"
-            type="text"
-            name="city"
-            id="city_input"
-            placeholder="Enter city name"
-          />
-          <button
-            class="text-[16px] p-[12px] rounded-[25px] bg-[#fff] text-black cursor-pointer"
-            type="button"
-            id="searchBtn"
-          >
-            <i class="bx bx-search-alt-2"></i>Search
-          </button>
-          <button
-            class="text-[16px] p-[12px] rounded-[25px] bg-[#ea6e4b] cursor-pointer"
-            type="button"
-            id="locationBtn"
-          >
-            <i class="bx bx-target-lock"></i>current Loaction
-          </button>
-        </div>
-      </div>
-      </section>
-      <!-- city Input section Ends -->
+      <div class="container">
+        <!-- city Inputs Section start -->
 
-      <!-- Weather Display Start  -->
-      <div
-        class="weather-data grid grid-cols-[repeat(4,1fr)] gap-[12px] max-xl:grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] max-xs:grid-cols-1"
-      >
-      <!-- weather display leftside start -->
-      <aside>
-        <div class="weather-left col-span-1">
-          <!-- display current daysand locations start -->
-          <article>
-          <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-            <div class="current-weather flex justify-between items-center">
-              <div class="details">
-                <p class="text-[14px] text-[#fff]">Now</p>
-                <h2 class="text-[32px] font-medium my-[7px] mx-0">___&deg;C</h2>
-                <p class="text-[14px] text-[#999]">____</p>
-              </div>
-              <div class="weather-icon">
-                <img src="https://openweathermap.org/img/wn/02d.png" alt="" />
-              </div>
-            </div>
-            <hr />
-            <div class="card-footer text-[14px] mb-12px">
-              <p class="text-[14px] text-[#999]">
-                <i class="bx bx-calendar-alt"></i>___
-              </p>
-              <p class="text-[14px] text-[#999]">
-                <i class="bx bx-location-plus"></i>____
-              </p>
-            </div>
-          </div>
-          </article>
-          <!-- display current days and locations ends -->
-
-          <!-- display 5 day forcast display start -->
-          <article>
-          <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-            <h2 class="text-[32px] font-medium my-[7px] mx-0">
-              5 days Forecast
-            </h2>
-            <!--  -->
-            <div class="day-forecast">
-              <!-- forcast Cards 1 start -->
-              <div
-                class="forecast-item grid grid-cols-[repeat(5,1fr)] place-items-center mb-[15px]"
-              >
-                <div class="icon-wrapper flex items-center">
-                  <img
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
-                    alt=""
-                  />
-                  <span>___&deg;C</span>
-                </div>
-                <p>____</p>
-                <p>____</p>
-              </div>
-              <!-- forcast Cards 1 Ends -->
-
-              <!-- forcast Cards 2 start -->
-              <div
-                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
-              >
-                <div class="icon-wrapper flex items-center">
-                  <img
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
-                    alt=""
-                  />
-                  <span>___&deg;C</span>
-                </div>
-                <p>____</p>
-                <p>____</p>
-              </div>
-              <!-- forcast Cards 2 Ends -->
-
-              <!-- forcast Cards 3 start -->
-              <div
-                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
-              >
-                <div class="icon-wrapper flex items-center">
-                  <img
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
-                    alt=""
-                  />
-                  <span>___&deg;C</span>
-                </div>
-                <p>____</p>
-                <p>____</p>
-              </div>
-              <!-- forcast Cards 3 Ends -->
-
-              <!-- forcast Cards 4 start -->
-              <div
-                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
-              >
-                <div class="icon-wrapper flex items-center">
-                  <img
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
-                    alt=""
-                  />
-                  <span>___&deg;C</span>
-                </div>
-                <p>____</p>
-                <p>____</p>
-              </div>
-              <!-- forcast Cards 4 Ends -->
-
-              <!-- forcast Cards 5 start -->
-              <div
-                class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
-              >
-                <div class="icon-wrapper flex items-center">
-                  <img
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
-                    alt=""
-                  />
-                  <span>___&deg;C</span>
-                </div>
-                <p>____</p>
-                <p>____</p>
-              </div>
-              <!-- forcast Cards 1 Ends -->
-
-            </div>
-          </div>
-          </article>
-          <!-- display 5 day forcast display Ends -->
-        </div>
-      </aside>
-      <!-- weather display leftside End -->
-
-
-        <!-- Display details rightSide start -->
-        <section>
         <div
-          class="weather-right col-span-3 max-xl:col-span-2 max-md:col-span-1"
+          class="header sticky top-0 bg-[#212529] flex justify-between items-center mb-[10px] py-[15px] px-0"
         >
-          <h2 class="mb-[10px] text-2xl font-medium">Today's Highlights</h2>
-
-          <!--Display highlights start  -->
-          <article>
-          <div
-            class="hightlights grid grid-cols-[repeat(4,1fr)] gap-[15px] max-xl:grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)]"
-          >
-          <!--display Air qulaity index Strart  -->
-          <details>
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] col-span-2 nth-1:max-xl:col-span-3 max-md:nth-1:max-xl:col-span-2"
+          <h2 class="text-2xl font-bold">Weather</h2>
+          <div class="weather-input">
+            <input
+              class="bg-[#2a2b2d] p-[12px] text-[16px] rounded-[25px] text-[#fff] focus:outline-none"
+              type="text"
+              name="city"
+              id="city_input"
+              placeholder="Enter city name"
+            />
+            <button
+              class="text-[16px] p-[12px] rounded-[25px] bg-[#fff] text-black cursor-pointer"
+              type="button"
+              id="searchBtn"
             >
-              <div class="card-head flex justify-between mb-[10px]">
-                <p>Air Quality Index</p>
-                <p
-                  class="air-index api-5 text-[#000] py-[5px] px-[10px] rounded-[15px]"
-                >
-                  Good
-                </p>
-              </div>
-              <div
-                class="air-indices grid grid-cols-[repeat(4,1fr)] place-items-center"
-              >
-                <i class="bx bx-wind text-5xl"></i>
-
-                <!-- item 1 start -->
-                <div class="item">
-                  <p class="text-center">PM2.5</p>
-                  <h2>____</h2>
-                </div>
-                <!-- item 1 Ends -->
-
-                <!-- item 2 start -->
-                <div class="item">
-                  <p class="text-center">PM10</p>
-                  <h2>____</h2>
-                </div>
-                <!-- item 2 Ends -->
-
-                <!-- item 3 start -->
-                <div class="item">
-                  <p class="text-center">SO2</p>
-                  <h2>____</h2>
-                </div>
-                <!-- item 3 Ends -->
-
-                <!-- item 4 start -->
-                <div class="item">
-                  <p class="text-center">CO</p>
-                  <h2>____</h2>
-                </div>
-                <!-- item 4 Ends -->
-
-                <!-- item 5 start -->
-                <div class="item">
-                  <p class="text-center">NO</p>
-                  <h2>____</h2>
-                </div>
-                <!-- item 5 Ends -->
-
-                <!-- item 6 start -->
-                <div class="item">
-                  <p class="text-center">N02</p>
-                  <h2>___</h2>
-                </div>
-                <!-- item 6 Ends -->
-                
-                <!-- item 7 start -->
-                <div class="item">
-                  <p class="text-center">NH3</p>
-                  <h2>___</h2>
-                </div>
-                <!-- item 7 Ends -->
-
-                <!-- item 8 start -->
-                <div class="item">
-                  <p class="text-center">O3</p>
-                  <h2>___</h2>
-                </div>
-                <!-- item 8 Ends -->
-
-              </div>
-            </div>
-            </details>
-            <!--display Air qulaity index Ends  -->
-
-            <!-- display Sunrise and Sunset Start -->
-             <details>
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] col-span-2"
+              <i class="bx bx-search-alt-2"></i>Search
+            </button>
+            <button
+              class="text-[16px] p-[12px] rounded-[25px] bg-[#ea6e4b] cursor-pointer"
+              type="button"
+              id="locationBtn"
             >
-              <div class="card-head">
-                <p>Sunrise & Sunset</p>
-              </div>
-              <div class="sunrise-sunset grid grid-cols-[repeat(2,1fr)]">
-
-              <!-- sunrise card start -->
-                <div class="item flex items-center gap-2.5">
-                  <div class="icon">
-                    <i class="bx bx-sun text-5xl"></i>
-                  </div>
-                  <div class="">
-                    <p>Sunrise</p>
-                    <h2 class="mt-[15px]">_____</h2>
-                  </div>
-                </div>
-              <!-- sunrise card Ends -->
-
-                <!-- sunset card Start -->
-                <div class="item flex items-center gap-2.5">
-                  <div class="icon">
-                    <i class="bx bx-sun text-5xl"></i>
-                  </div>
-                  <div class="">
-                    <p>Sunset</p>
-                    <h2 class="mt-[15px]">_____</h2>
-                  </div>
-                </div>
-                <!-- sunset card Ends -->
-
-              </div>
-            </div>
-            </details>
-            <!-- display Sunrise and Sunset Ends -->
-
-            <!-- display Humidity Start -->
-            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-              <div class="card-head">
-                <p>Humidity</p>
-              </div>
-              <div class="card-item flex justify-between">
-                <i class="fa-solid fa-water text-2xl"></i>
-                <h2 id="humidityVal">___%</h2>
-              </div>
-            </div>
-            <!-- display Humidity Ends -->
-
-
-            <!-- display Pressure Start -->
-            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-              <div class="card-head">
-                <p>Pressure</p>
-              </div>
-              <div class="card-item flex justify-between">
-                <i class="fa-solid fa-water text-2xl"></i>
-                <h2 id="pressurVal">___hPa</h2>
-              </div>
-            </div>
-            <!-- display Pressure Ends -->
-
-            <!-- display Visibility Starts -->
-            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-              <div class="card-head">
-                <p>Visibility</p>
-              </div>
-              <div class="card-item flex justify-between">
-                <i class="fa-solid fa-water text-2xl"></i>
-                <h2 id="VisibilityVal">___Km</h2>
-              </div>
-            </div>
-            <!-- display Visibility Ends -->
-
-             <!-- display Wind Speed Ends -->
-            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-              <div class="card-head">
-                <p>Wind Speed</p>
-              </div>
-              <div class="card-item flex justify-between">
-                <i class="fa-solid fa-water text-2xl"></i>
-                <h2 id="WindSpeedVal">___m/s</h2>
-              </div>
-            </div>
-            <!-- display Wind Speed Ends -->
-
-            <!-- display Feels Like start -->
-            <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
-              <div class="card-head">
-                <p>Feels Like</p>
-              </div>
-              <div class="card-item flex justify-between">
-                <i class="fa-solid fa-water text-2xl"></i>
-                <h2 id="feelsVal">___&deg;C</h2>
-              </div>
-            </div>
-            <!-- display Feels Like Ends -->
+              <i class="bx bx-target-lock"></i>current Loaction
+            </button>
           </div>
-          </article>
-          <!--Display highlights Ends  -->
-
-          <h2 class="text-[20px] mb-2.5 font-normal">Today at</h2>
-
-          <!--weather display by hours start -->
-          <article>
-          <div
-            class="hourly-forecast grid grid-cols-[repeat(8,1fr)] gap-x-[10px] max-xl:grid-cols-[repeat(6,1fr)] max-md:grid-cols-[repeat(4,1fr)]"
-          >
-          <!-- hourly cards 1 start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 1 Ends -->
-
-          <!-- hourly cards 2 start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 2 Ends -->
-
-          <!-- hourly cards 3 start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 3 Ends -->
-
-          <!-- hourly cards 4 Start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 4 Ends -->
-            
-          <!-- hourly cards 5 Start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 5 Ends -->
-
-          <!-- hourly cards 6 Start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 6 Ends -->
-
-          <!-- hourly cards 7 Start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 7 Ends -->
-
-          <!-- hourly cards 8 Start -->
-            <div
-              class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
-            >
-              <p>9 AM</p>
-              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
-              <p>____&deg;C</p>
-            </div>
-          <!-- hourly cards 8 Ends -->
-
-          </div>
-          </article>
-          <!--weather display by hours Ends -->
-
         </div>
-        </section>
-        <!-- Display details rightSide ends -->
 
+        <!-- city Input section Ends -->
+
+        <!-- Weather Display Start  -->
+        <div
+          class="weather-data grid grid-cols-[repeat(4,1fr)] gap-[12px] max-xl:grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] max-xs:grid-cols-1"
+        >
+          <!-- weather display leftside start -->
+
+          <div class="weather-left col-span-1">
+            <!-- display current daysand locations start -->
+            <article>
+              <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
+                <div class="current-weather flex justify-between items-center">
+                  <div class="details">
+                    <p class="text-[14px] text-[#fff]">Now</p>
+                    <h2 class="text-[32px] font-medium my-[7px] mx-0">
+                      ___&deg;C
+                    </h2>
+                    <p class="text-[14px] text-[#999]">____</p>
+                  </div>
+                  <div class="weather-icon">
+                    <img
+                      src="https://openweathermap.org/img/wn/02d.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div class="card-footer text-[14px] mb-12px">
+                  <p class="text-[14px] text-[#999]">
+                    <i class="bx bx-calendar-alt"></i>___
+                  </p>
+                  <p class="text-[14px] text-[#999]">
+                    <i class="bx bx-location-plus"></i>____
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- display current days and locations ends -->
+
+            <!-- display 5 day forcast display start -->
+            <article>
+              <div class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]">
+                <h2 class="text-[32px] font-medium my-[7px] mx-0">
+                  5 days Forecast
+                </h2>
+                <!--  -->
+                <div class="day-forecast">
+                  <!-- forcast Cards 1 start -->
+                  <div
+                    class="forecast-item grid grid-cols-[repeat(5,1fr)] place-items-center mb-[15px]"
+                  >
+                    <div class="icon-wrapper flex items-center">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt=""
+                      />
+                      <span>___&deg;C</span>
+                    </div>
+                    <p>____</p>
+                    <p>____</p>
+                  </div>
+                  <!-- forcast Cards 1 Ends -->
+
+                  <!-- forcast Cards 2 start -->
+                  <div
+                    class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+                  >
+                    <div class="icon-wrapper flex items-center">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt=""
+                      />
+                      <span>___&deg;C</span>
+                    </div>
+                    <p>____</p>
+                    <p>____</p>
+                  </div>
+                  <!-- forcast Cards 2 Ends -->
+
+                  <!-- forcast Cards 3 start -->
+                  <div
+                    class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+                  >
+                    <div class="icon-wrapper flex items-center">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt=""
+                      />
+                      <span>___&deg;C</span>
+                    </div>
+                    <p>____</p>
+                    <p>____</p>
+                  </div>
+                  <!-- forcast Cards 3 Ends -->
+
+                  <!-- forcast Cards 4 start -->
+                  <div
+                    class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+                  >
+                    <div class="icon-wrapper flex items-center">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt=""
+                      />
+                      <span>___&deg;C</span>
+                    </div>
+                    <p>____</p>
+                    <p>____</p>
+                  </div>
+                  <!-- forcast Cards 4 Ends -->
+
+                  <!-- forcast Cards 5 start -->
+                  <div
+                    class="forecast-item grid grid-cols-[repeat(3,1fr)] place-items-center mb-[15px]"
+                  >
+                    <div class="icon-wrapper flex items-center">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt=""
+                      />
+                      <span>___&deg;C</span>
+                    </div>
+                    <p>____</p>
+                    <p>____</p>
+                  </div>
+                  <!-- forcast Cards 1 Ends -->
+                </div>
+              </div>
+            </article>
+            <!-- display 5 day forcast display Ends -->
+          </div>
+
+          <!-- weather display leftside End -->
+
+          <!-- Display details rightSide start -->
+
+          <div
+            class="weather-right col-span-3 max-xl:col-span-2 max-md:col-span-1"
+          >
+            <h2 class="mb-[10px] text-2xl font-medium">Today's Highlights</h2>
+
+            <!--Display highlights start  -->
+            <article>
+              <div
+                class="hightlights grid grid-cols-[repeat(4,1fr)] gap-[15px] max-xl:grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)]"
+              >
+                <!--display Air qulaity index Strart  -->
+
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] col-span-2 nth-1:max-xl:col-span-3 max-md:nth-1:max-xl:col-span-2"
+                >
+                  <div class="card-head flex justify-between mb-[10px]">
+                    <p>Air Quality Index</p>
+                    <p
+                      class="air-index api-5 text-[#000] py-[5px] px-[10px] rounded-[15px]"
+                    >
+                      Good
+                    </p>
+                  </div>
+                  <div
+                    class="air-indices grid grid-cols-[repeat(4,1fr)] place-items-center"
+                  >
+                    <i class="bx bx-wind text-5xl"></i>
+
+                    <!-- item 1 start -->
+                    <div class="item">
+                      <p class="text-center">PM2.5</p>
+                      <h2>____</h2>
+                    </div>
+                    <!-- item 1 Ends -->
+
+                    <!-- item 2 start -->
+                    <div class="item">
+                      <p class="text-center">PM10</p>
+                      <h2>____</h2>
+                    </div>
+                    <!-- item 2 Ends -->
+
+                    <!-- item 3 start -->
+                    <div class="item">
+                      <p class="text-center">SO2</p>
+                      <h2>____</h2>
+                    </div>
+                    <!-- item 3 Ends -->
+
+                    <!-- item 4 start -->
+                    <div class="item">
+                      <p class="text-center">CO</p>
+                      <h2>____</h2>
+                    </div>
+                    <!-- item 4 Ends -->
+
+                    <!-- item 5 start -->
+                    <div class="item">
+                      <p class="text-center">NO</p>
+                      <h2>____</h2>
+                    </div>
+                    <!-- item 5 Ends -->
+
+                    <!-- item 6 start -->
+                    <div class="item">
+                      <p class="text-center">N02</p>
+                      <h2>___</h2>
+                    </div>
+                    <!-- item 6 Ends -->
+
+                    <!-- item 7 start -->
+                    <div class="item">
+                      <p class="text-center">NH3</p>
+                      <h2>___</h2>
+                    </div>
+                    <!-- item 7 Ends -->
+
+                    <!-- item 8 start -->
+                    <div class="item">
+                      <p class="text-center">O3</p>
+                      <h2>___</h2>
+                    </div>
+                    <!-- item 8 Ends -->
+                  </div>
+                </div>
+
+                <!--display Air qulaity index Ends  -->
+
+                <!-- display Sunrise and Sunset Start -->
+
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] col-span-2"
+                >
+                  <div class="card-head">
+                    <p>Sunrise & Sunset</p>
+                  </div>
+                  <div class="sunrise-sunset grid grid-cols-[repeat(2,1fr)]">
+                    <!-- sunrise card start -->
+                    <div class="item flex items-center gap-2.5">
+                      <div class="icon">
+                        <i class="bx bx-sun text-5xl"></i>
+                      </div>
+                      <div class="">
+                        <p>Sunrise</p>
+                        <h2 class="mt-[15px]">_____</h2>
+                      </div>
+                    </div>
+                    <!-- sunrise card Ends -->
+
+                    <!-- sunset card Start -->
+                    <div class="item flex items-center gap-2.5">
+                      <div class="icon">
+                        <i class="bx bx-sun text-5xl"></i>
+                      </div>
+                      <div class="">
+                        <p>Sunset</p>
+                        <h2 class="mt-[15px]">_____</h2>
+                      </div>
+                    </div>
+                    <!-- sunset card Ends -->
+                  </div>
+                </div>
+
+                <!-- display Sunrise and Sunset Ends -->
+
+                <!-- display Humidity Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                >
+                  <div class="card-head">
+                    <p>Humidity</p>
+                  </div>
+                  <div class="card-item flex justify-between">
+                    <i class="fa-solid fa-water text-2xl"></i>
+                    <h2 id="humidityVal">___%</h2>
+                  </div>
+                </div>
+                <!-- display Humidity Ends -->
+
+                <!-- display Pressure Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                >
+                  <div class="card-head">
+                    <p>Pressure</p>
+                  </div>
+                  <div class="card-item flex justify-between">
+                    <i class="fa-solid fa-water text-2xl"></i>
+                    <h2 id="pressurVal">___hPa</h2>
+                  </div>
+                </div>
+                <!-- display Pressure Ends -->
+
+                <!-- display Visibility Starts -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                >
+                  <div class="card-head">
+                    <p>Visibility</p>
+                  </div>
+                  <div class="card-item flex justify-between">
+                    <i class="fa-solid fa-water text-2xl"></i>
+                    <h2 id="VisibilityVal">___Km</h2>
+                  </div>
+                </div>
+                <!-- display Visibility Ends -->
+
+                <!-- display Wind Speed Ends -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                >
+                  <div class="card-head">
+                    <p>Wind Speed</p>
+                  </div>
+                  <div class="card-item flex justify-between">
+                    <i class="fa-solid fa-water text-2xl"></i>
+                    <h2 id="WindSpeedVal">___m/s</h2>
+                  </div>
+                </div>
+                <!-- display Wind Speed Ends -->
+
+                <!-- display Feels Like start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                >
+                  <div class="card-head">
+                    <p>Feels Like</p>
+                  </div>
+                  <div class="card-item flex justify-between">
+                    <i class="fa-solid fa-water text-2xl"></i>
+                    <h2 id="feelsVal">___&deg;C</h2>
+                  </div>
+                </div>
+                <!-- display Feels Like Ends -->
+              </div>
+            </article>
+            <!--Display highlights Ends  -->
+
+            <h2 class="text-[20px] mb-2.5 font-normal">Today at</h2>
+
+            <!--weather display by hours start -->
+            <article>
+              <div
+                class="hourly-forecast grid grid-cols-[repeat(8,1fr)] gap-x-[10px] max-xl:grid-cols-[repeat(6,1fr)] max-md:grid-cols-[repeat(4,1fr)]"
+              >
+                <!-- hourly cards 1 start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 1 Ends -->
+
+                <!-- hourly cards 2 start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 2 Ends -->
+
+                <!-- hourly cards 3 start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 3 Ends -->
+
+                <!-- hourly cards 4 Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 4 Ends -->
+
+                <!-- hourly cards 5 Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 5 Ends -->
+
+                <!-- hourly cards 6 Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 6 Ends -->
+
+                <!-- hourly cards 7 Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 7 Ends -->
+
+                <!-- hourly cards 8 Start -->
+                <div
+                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
+                >
+                  <p>9 AM</p>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    alt=""
+                  />
+                  <p>____&deg;C</p>
+                </div>
+                <!-- hourly cards 8 Ends -->
+              </div>
+            </article>
+            <!--weather display by hours Ends -->
+          </div>
+
+          <!-- Display details rightSide ends -->
+        </div>
+        <!-- Weather Display Ends  -->
       </div>
-      <!-- Weather Display Ends  -->
-
-    </div>
     </main>
   </body>
 </html>
