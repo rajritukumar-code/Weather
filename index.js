@@ -314,3 +314,43 @@ cityInput.addEventListener('keyup',e=>e.key==='Enter'&& getCityCooordinates());
 // addEventLister on defalut location of user
 window.addEventListener('load',getUsercoodinates);
 
+
+const tempUnitSelector = document.querySelector("select");
+const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
+
+let currentUnit = "C"; // Default unit
+let temperatureInCelsius = 25; // You can replace this with actual fetched value
+
+// Utility functions
+function celsiusToFahrenheit(c) {
+  return (c * 9) / 5 + 32;
+}
+
+function fahrenheitToCelsius(f) {
+  return ((f - 32) * 5) / 9;
+}
+
+// Example: update only the main temperature value
+function updateTemperatureDisplay(temp, unit) {
+  const mainTempElement = document.querySelector(".current-weather h2");
+
+  if (!mainTempElement) return;
+
+  if (unit === "F") {
+    mainTempElement.innerHTML = `${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+  } else {
+    mainTempElement.innerHTML = `${temp.toFixed(1)}&deg;C`;
+  }
+}
+
+// Handle unit change
+tempUnitSelector.addEventListener("change", (e) => {
+  const selectedUnit = e.target.value.includes("F") ? "F" : "C";
+
+  if (selectedUnit !== currentUnit) {
+    currentUnit = selectedUnit;
+    updateTemperatureDisplay(temperatureInCelsius, currentUnit);
+  }
+});
+
+
