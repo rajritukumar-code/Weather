@@ -316,7 +316,7 @@ window.addEventListener('load',getUsercoodinates);
 
 
 const tempUnitSelector = document.querySelector("select");
-const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
+// const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
 
 let currentUnit = "C"; // Default unit
 let temperatureInCelsius = 25; // You can replace this with actual fetched value
@@ -330,16 +330,28 @@ function fahrenheitToCelsius(f) {
   return ((f - 32) * 5) / 9;
 }
 
-// Example: update only the main temperature value
+//  update only the main temperature value
 function updateTemperatureDisplay(temp, unit) {
-  const mainTempElement = document.querySelector(".current-weather h2");
+  const mainTempElement = document.querySelectorAll(".icon-wrapper span");
+  const locationTemp= document.querySelector(".current-weather h2 ");
+  // const hourlyTemp=document.querySelectorAll(".hourly-forecast .card h2");
+  console.log(hourlyTemp);
 
   if (!mainTempElement) return;
 
   if (unit === "F") {
-    mainTempElement.innerHTML = `${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    locationTemp.innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    for(i=0;i<5;i++){
+    mainTempElement[i].innerHTML = `${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    
+    }
   } else {
-    mainTempElement.innerHTML = `${temp.toFixed(1)}&deg;C`;
+    locationTemp.innerHTML=`${temp.toFixed(1)}&deg;C`;
+     for(i=0;i<5;i++){
+    mainTempElement[i].innerHTML = `${temp.toFixed(1)}&deg;C`;
+    
+
+     }
   }
 }
 
