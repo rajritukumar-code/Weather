@@ -210,8 +210,8 @@ function getWeatherDetails(name, lat, lon, country, state) {
         <div
               class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center "
             >
-              <p>${hr} ${a}</p>
-              <img  src="https://openweathermap.org/img/wn/${hourlyForcast[i].weather[0].icon}.png" alt="" />
+              <h2>${hr} ${a}</h2>
+              <img src="https://openweathermap.org/img/wn/${hourlyForcast[i].weather[0].icon}.png" alt="" />
               <p>${(hourlyForcast[i].main.temp - 273.15).toFixed(2)}&deg;C</p>
             </div>
         `
@@ -247,7 +247,6 @@ function getWeatherDetails(name, lat, lon, country, state) {
               </div>
             `;
       }
-
       // console.log(fiveDaysForecast);
     })
     .catch(() => {
@@ -319,7 +318,11 @@ const tempUnitSelector = document.querySelector("select");
  const temperatureElements = document.querySelectorAll("h2, span, p"); // You can be more specific
 
 let currentUnit = "C"; // Default unit
-let temperatureInCelsius = 25; // You can replace this with actual fetched value
+let temperatureInCelsius=25;
+
+
+//  console.log(temperatureInCelsius)               
+ // You can replace this with actual fetched value
 
 // Utility functions
 function celsiusToFahrenheit(c) {
@@ -334,23 +337,39 @@ function fahrenheitToCelsius(f) {
 function updateTemperatureDisplay(temp, unit) {
   const mainTempElement = document.querySelectorAll(".icon-wrapper span");
   const locationTemp= document.querySelector(".current-weather h2 ");
-  // const hourlyTemp=document.querySelectorAll(".hourly-forecast .card h2");
-  console.log(mainTempElement);
+  const hourlyTemp=document.querySelectorAll(".hourly-forecast .card p");
+  const flees=document.getElementById("feelsVal");
+  console.log(flees);
+
+  // fetch(WEATER_API_URL).then(res=>res.json()).then(data=>{
+  //   let temperatureInCelsius=(
+  //                 data.main.temp - 273.15
+  //               ).toFixed(2)
+  //               console.log(temperatureInCelsius)
+
+  // })
 
   if (!mainTempElement) return;
 
   if (unit === "F") {
-    locationTemp.innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
-    for(i=0;i<5;i++){
-    mainTempElement[i].innerHTML = `${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
     
+    for(let i=0;i<8;i++){
+      hourlyTemp[i].innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    }
+    locationTemp.innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    flees.innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    for( let i=0;i<5;i++){
+    mainTempElement[i].innerHTML = `${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`;
+    hourlyTemp[i].innerHTML=`${celsiusToFahrenheit(temp).toFixed(1)}&deg;F`
     }
   } else {
+    for(let i=0;i<8;i++){
+      hourlyTemp[i].innerHTML=`${temp.toFixed(1)}&deg;C`;
+    }
     locationTemp.innerHTML=`${temp.toFixed(1)}&deg;C`;
+    flees.innerHTML=`${temp.toFixed(1)}&deg;C`;
      for(i=0;i<5;i++){
     mainTempElement[i].innerHTML = `${temp.toFixed(1)}&deg;C`;
-    
-
      }
   }
 }
@@ -364,5 +383,60 @@ tempUnitSelector.addEventListener("change", (e) => {
     updateTemperatureDisplay(temperatureInCelsius, currentUnit);
   }
 });
+
+
+
+const input = document.getElementById("city_input");
+console.log(input);
+const dropdown = document.getElementById("historyDropdown");
+
+function saveSearch(city) {
+  let history = JSON.parse(localStorage.getItem("citySearchHistory")) || [];
+  if (!history.includes(city)) {
+    history.unshift(city);
+    if (history.length > 5) history = history.slice(0, 5);
+    localStorage.setItem("citySearchHistory", JSON.stringify(history));
+  }
+}
+
+function showDropdown() {
+  dropdown.innerHTML = ""; // Clear existing
+
+  const history = JSON.parse(localStorage.getItem("citySearchHistory")) || [];
+
+  if (history.length === 0) return;
+
+  history.forEach((city) => {
+    const li = document.createElement("li");
+    li.textContent = city;
+    li.className =
+      "px-4 py-2 cursor-pointer hover:bg-[#3a3b3d] border-b border-[#444]";
+    li.addEventListener("click", () => {
+      input.value = city;
+      dropdown.classList.add("hidden");
+    });
+    dropdown.appendChild(li);
+  });
+
+  dropdown.classList.remove("hidden");
+}
+
+function hideDropdown() {
+  setTimeout(() => dropdown.classList.add("hidden"), 150); // small delay for click to register
+}
+
+// Add event listeners
+input.addEventListener("focus", showDropdown);
+input.addEventListener("input", showDropdown);
+input.addEventListener("blur", hideDropdown);
+
+// Save to localStorage on search click
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const city = input.value.trim();
+  if (city) {
+    saveSearch(city);
+  }
+});
+
 
 

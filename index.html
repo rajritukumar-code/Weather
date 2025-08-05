@@ -25,14 +25,19 @@
           class="header sticky top-0 bg-[#212529] flex justify-between items-center mb-[10px] py-[15px] px-0"
         >
           <h2 class="text-2xl font-bold">Weather</h2>
-          <div class="weather-input">
+          <div class="weather-input  ">
             <input
-              class="bg-[#2a2b2d] p-[12px] text-[16px] rounded-[25px] text-[#fff] focus:outline-none"
+              class="bg-[#2a2b2d] p-[12px] text-[16px] rounded-[25px] text-[#fff] focus:outline-none relative"
               type="text"
               name="city"
               id="city_input"
               placeholder="Enter city name"
+              autocomplete="off"
             />
+           <ul
+    id="historyDropdown"
+    class="absolute left-0 top-[55px] w-full bg-[#2a2b2d] text-white rounded-b-[15px] hidden z-50 shadow-lg max-h-[180px] overflow-y-auto"
+  ></ul>
             <select
               id="unitSelect"
               class="bg-[#2a2b2d] p-[12px] rounded-[25px] text-white mx-2"
@@ -377,7 +382,7 @@
 
                 <!-- display Feels Like start -->
                 <div
-                  class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
+                  class="flees card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px]"
                 >
                   <div class="card-head">
                     <p>Feels Like</p>
@@ -403,7 +408,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -416,7 +421,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -429,7 +434,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -442,7 +447,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -455,7 +460,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -468,7 +473,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""
@@ -481,7 +486,7 @@
                 <div
                   class="card bg-[#2a2b2d] p-[15px] rounded-[15px] mb-[15px] text-center"
                 >
-                  <p>9 AM</p>
+                  <h2>9 AM</h2>
                   <img
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     alt=""

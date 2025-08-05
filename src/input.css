@@ -44,6 +44,7 @@
     background-color: var(--color-api-5);
   }
   
+  
   @media (max-width: 992px) {
     .weather-data .weather-right .hightlights {
       & .card {
